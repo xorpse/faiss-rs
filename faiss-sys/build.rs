@@ -27,6 +27,7 @@ fn macos_cfg(cfg: &mut cmake::Config) -> Option<String> {
     };
 
     cfg.cxxflag(&format!("-I{}/include", omp_root.display()));
+    cfg.cxxflag(&format!("-L{}/lib", omp_root.display()));
 
     Some(format!("{}/lib", omp_root.display()))
 }
